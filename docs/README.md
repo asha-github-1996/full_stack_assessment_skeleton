@@ -424,6 +424,8 @@ cd backend
 npm start
 ```
 
+### Server runs on http://localhost:3000 and client on http://localhost:3001
+
 ## Submission Guidelines
 
 - once you're done with [DB](#1-database), [frontend](#2-react-spa), [backend](#3-backend-api-development-on-node) it's time to submit your solution :smiley:
