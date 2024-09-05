@@ -27,10 +27,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* <p>
-        Select User : <UserDropdown onSelectUser={setSelectedUser} />
-      </p> */}
-
       <div className="select-user-container">
         <p>Select User :</p>
         <UserDropdown onSelectUser={setSelectedUser} />
@@ -55,9 +51,6 @@ const Home = () => {
           </div>
         )}
       </div>
-
-      {/* <HomeCard /> */}
-      {/* <EditUser /> */}
     </div>
   );
 };
