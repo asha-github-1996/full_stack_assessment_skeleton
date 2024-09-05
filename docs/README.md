@@ -293,6 +293,13 @@ The frontend of this project is built using React and Redux Toolkit. The structu
     Fetch users and homes efficiently with caching to avoid unnecessary API calls.
   - Gracefully handle API errors by showing an appropriate error message.
 
+- Install frontend packages
+
+```bash
+cd frontend
+npm install
+```
+
 - To run frontend
 
 ```bash
@@ -402,6 +409,13 @@ The backend for this project is built using the Expressjs framework, which is a 
   - Use Prisma ORM to interact with the database. It allows querying and updating data in a structured way and avoids raw SQL queries.
 
 - This solution ensures that the APIs interact with the database efficiently, use proper HTTP methods, and handle data fetching, sanitization.
+
+- Install backend packages
+
+```bash
+cd backend
+npm install
+```
 
 - To run backend
 
