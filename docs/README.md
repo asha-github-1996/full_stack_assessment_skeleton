@@ -364,8 +364,6 @@ npm start
 
 ### solution
 
-> explain briefly your solution for this problem here
-
 The backend for this project is built using the Expressjs framework, which is a progressive Node.js framework for building efficient and scalable server-side applications. Here’s a detailed breakdown of the backend components and their functionalities:
 
 - **Framework and Libraries**
