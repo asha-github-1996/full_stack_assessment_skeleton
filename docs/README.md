@@ -1,4 +1,4 @@
-# Introduction - how to read this doc
+# Introduction - how to read this document
 
 - This exercise is designed to test basic skills in 3 core areas:
 
