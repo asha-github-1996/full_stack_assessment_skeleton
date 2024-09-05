@@ -135,7 +135,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
 
 ### solution
 
-> - To solve this problem I would normalize the user_home table by splitting it into three tables: user, home, users_homes.
+To solve this problem I would normalize the `user_home` table by splitting it into three tables: `user`, `home`, `users_homes`.
 
 - **Table Creation**
 
@@ -189,6 +189,7 @@ docker-compose -f docker-compose.initial.yml up --build -d
   - however if we edit the users, and then click `Save`:
 
     - the users related to that home must be updated in the DB
+
     - the modal should close and the changes should reflect on the `homes for user page`
     - so for eg: if we had picked `user1` on `homes for user page` then clicked on `Edit User` for any home there and **unchecked** `user1` in the modal and saved, then upon closing of the modal, the home we clicked on previously, should NO longer be visible for `user1`, but should be visible for any other user for whom the checkbox was checked on `Save`
 
@@ -249,18 +250,19 @@ docker-compose -f docker-compose.initial.yml up --build -d
 
 ### solution
 
-> explain briefly your solution for this problem here
+The frontend of this project is built using React and Redux Toolkit. The structure and functionality are organized as follows:
 
-- The frontend of this project is built using React and Redux Toolkit. The structure and functionality are organized as follows:
+- Components: The components directory contains reusable UI components that are used across different parts of the application.(`EditUser`, `HomeCard`, `UserDropdown`)
 
-  - Components: The components directory contains reusable UI components that are used across different parts of the application.(`EditUser`, `HomeCard`, `UserDropdown`)
-  - Redux: The redux directory contains slices and API services created using Redux Toolkit. This includes:
-    - Slices: State management logic for different parts of the application.(`homeSlice`, `userSlice`)
-    - API Services: Integration with backend APIs using createApi from Redux Toolkit Query for data fetching and caching.
-  - Pages: The pages directory contains the main views of the application.(`Home`)
-  - Styling: Styles for the components are written in the `index.css` file
-  - State Management: Redux Toolkit is used for state management, providing a centralized store and slices for different parts of the state. Redux Toolkit Query is used for data fetching, caching, and synchronization with the backend.
-  - Session Management: The session cache is managed using Redux Toolkit Query's invalidateTags feature, ensuring that data is refetched and updated when necessary.
+- Redux: The redux directory contains slices and API services created using Redux Toolkit. This includes:
+
+  - Slices: State management logic for different parts of the application.(`homeSlice`, `userSlice`)
+  - API Services: Integration with backend APIs using createApi from Redux Toolkit Query for data fetching and caching.
+
+- Pages: The pages directory contains the main views of the application.(`Home`)
+- Styling: Styles for the components are written in the `index.css` file
+- State Management: Redux Toolkit is used for state management, providing a centralized store and slices for different parts of the state. Redux Toolkit Query is used for data fetching, caching, and synchronization with the backend.
+- Session Management: The session cache is managed using Redux Toolkit Query's invalidateTags feature, ensuring that data is refetched and updated when necessary.
 
 - **State Management with Redux Toolkit**
 
