@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model home {
+  id             Int           @id @default(autoincrement())
+  street_address String?       @db.VarChar(255)
+  state          String        @db.VarChar(50)
+  zip            String        @db.VarChar(10)
+  sqft           Float?        @db.Float
+  beds           Int?
+  baths          Int?
+  list_price     Float?        @db.Float
+  users    users_homes[]
+}
+
+model user {
+  id          Int           @id @default(autoincrement())
+  username    String?       @db.VarChar(100)
+  email       String?       @db.VarChar(100)
+  homes users_homes[]       
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model user_home {
+  username       String? @db.VarChar(100)
+  email          String? @db.VarChar(100)
+  street_address String? @db.VarChar(255)
+  state          String? @db.VarChar(50)
+  zip            String? @db.VarChar(10)
+  sqft           Float?  @db.Float
+  beds           Int?
+  baths          Int?
+  list_price     Float?  @db.Float
+
+  @@ignore
+}
+
+model users_homes {
+  id      Int  @id @default(autoincrement())
+  user_id Int
+  home_id Int
+  user    user @relation(fields: [user_id], references: [id])
+  home    home @relation(fields: [home_id], references: [id])
+
+  // @@unique([user_id, home_id])
+
+}
