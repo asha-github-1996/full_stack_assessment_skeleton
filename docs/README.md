@@ -288,9 +288,17 @@ The frontend of this project is built using React and Redux Toolkit. The structu
     - If “Save” is clicked, update the users related to the home by dispatching an action that triggers an API call to update the database.
 
 - **Data Fetching with RTK Query**
+
   - Use RTK Query for data fetching to manage loading states, errors, and caching.
     Fetch users and homes efficiently with caching to avoid unnecessary API calls.
   - Gracefully handle API errors by showing an appropriate error message.
+
+- To run frontend
+
+```bash
+cd frontend
+npm start
+```
 
 ## 3. Backend API development on Node
 
@@ -396,6 +404,13 @@ The backend for this project is built using the Expressjs framework, which is a 
   - Use Prisma ORM to interact with the database. It allows querying and updating data in a structured way and avoids raw SQL queries.
 
 - This solution ensures that the APIs interact with the database efficiently, use proper HTTP methods, and handle data fetching, sanitization.
+
+- To run backend
+
+```bash
+cd backend
+npm start
+```
 
 ## Submission Guidelines
 
