@@ -7,7 +7,13 @@ export const homesApi = createApi({
   endpoints: (builder) => ({
     getHomes: builder.query({
       query: (userId) => `find-by-user?userId=${userId}`,
-      providesTags: (result, error, userId) => [{ type: "Home", id: userId }],
+      providesTags: (result, error, userId) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Home", id })),
+              { type: "Home", id: "LIST" },
+            ]
+          : [{ type: "Home", id: "LIST" }],
     }),
     updateHomeUsers: builder.mutation({
       query: ({ homeId, userIds }) => ({
@@ -17,6 +23,7 @@ export const homesApi = createApi({
       }),
       invalidatesTags: (result, error, { homeId }) => [
         { type: "Home", id: homeId },
+        { type: "Home", id: "LIST" },
       ],
     }),
   }),
